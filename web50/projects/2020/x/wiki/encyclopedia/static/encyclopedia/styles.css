@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: white;
+    background-color: red;
 }
 
 code {
@@ -10,7 +10,9 @@ code {
 h1 {
     margin-top: 0px;
     padding-top: 20px;
+    text-decoration: dashed;
 }
+
 
 textarea {
     height: 90vh;
@@ -19,6 +21,7 @@ textarea {
 
 .main {
     padding: 10px;
+    background-color: red;
 }
 
 .search {
@@ -35,4 +38,8 @@ textarea {
 
 .sidebar h2 {
     margin-top: 5px;
+}
+
+.display-2_error {
+    font-size: 15px;
 }
