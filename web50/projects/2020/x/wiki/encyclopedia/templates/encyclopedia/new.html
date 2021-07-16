@@ -14,6 +14,7 @@
         <label for="name">Title:</label>
         {% csrf_token %}
             {{post.title}}
+            <br>
             {{post.content}}
         </form>
         
