@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Browse by Category</h2>
+
+
+    <div class="wrapper">
+        {% for category in categories %}
+            <a class=wrapper_a href="{% url 'categories' category.name %}">
+                <strong>{{ category.name }}</strong>
+            </a>
+        {% empty %}
+            <div>No categories</div>
+        {% endfor %}
+    </div>
+
+{% endblock %}

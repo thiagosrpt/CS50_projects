@@ -1,0 +1,73 @@
+{% extends "auctions/layout.html" %}
+{% load humanize %}
+
+{% block body %}
+
+{% if category.name %}
+    <h2>{{ category.name }}</h2>
+    {% else %}
+    <h2>Products you are missing out!</h2>
+    <br>
+{% endif %}
+
+    <div class="wrapper_index">
+        {% for listing in listings %}
+            <div class="wrapper-div">
+
+                <ul>
+            
+                    <li>
+                        <a class="category_link" href="{% url 'categories' listing.category %}"><strong>{{ listing.category }}</strong></a>
+                        <h5>
+                            <a href="{% url 'listing' listing.id %}"><strong>{{ listing.title }}</strong></a> <br> 
+                            {% if listing.sold %}
+                            SOLD for ${{ listing.latest_bid.bid_amount }} <img class="sold_icon" src="static/auctions/img/icon2_sold_yellow.png">
+                            {% elif listing.latest_bid.bid_amount %}
+                            Highest Bid ${{ listing.latest_bid.bid_amount | intcomma }} <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                            {% else %}
+                            Be the first to bid!!! <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                            {% endif %}
+                        </h5>
+                    </li>
+                    <br>
+                    <li>
+                        <div class="btn-right">
+                            Auctioneer: <strong>{{ listing.user_owner_id }}</strong>
+                            {% if listing.user_owner_id == request.user %}
+                                <a href="{% url 'delete_listing' listing=listing.id %}">[Delete]</a> 
+                                {% if listing.sold == False %}
+                                <a href="{% url 'sold_listing' listing=listing.id %}">[Mark as Sold]</a>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </li>
+                    <li>
+                        <img class="listing_image_index" src="{{ listing.photo }}" alt="{{ listing.title }}" href="{% url 'listing' listing.id %}">
+                            Published {{ listing.published_on | naturaltime }}
+                            <br>
+                            <strong>Starting Bid: ${{ listing.starting_price | intcomma}}</strong>
+                            <br>
+                            {% if listing.sold %}
+                                <strong>** SOLD for ${{ listing.latest_bid.bid_amount | intcomma}}  to {{ listing.latest_bid.bid_owner}} **</strong>  
+                                {% elif listing.latest_bid.bid_amount %}
+                                Highest Bid: <strong>${{ listing.latest_bid.bid_amount | intcomma}}</strong> placed by <strong>{{ listing.latest_bid.bid_owner }}</strong>
+                                <br>
+                                <a href="{% url 'listing' listing.id %}">[place your bid]</a>
+                            {% else %}    
+                                Published: Be the first, <a href="{% url 'listing' listing.id %}">place your bid.</a> 
+                            {% endif %}
+                    </li>
+            </div>
+        {% endfor %}
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+
+
+{% endblock %}
