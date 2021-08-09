@@ -1,0 +1,10 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+<br>
+{{  message }}
+<br>
+<a href="{{request.META.HTTP_REFERER}}">Go back</a>
+    
+{% endblock %}
