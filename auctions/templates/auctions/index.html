@@ -1,5 +1,6 @@
 {% extends "auctions/layout.html" %}
 {% load humanize %}
+{% load static %}
 
 {% block body %}
 
@@ -19,13 +20,13 @@
                     <li>
                         <a class="category_link" href="{% url 'categories' listing.category %}"><strong>{{ listing.category }}</strong></a>
                         <h5>
-                            <a href="{% url 'listing' listing.id %}"><strong>{{ listing.title }}</strong></a> <br> 
+                            <a href="{% url 'listing' listing.id %}"><strong>{{ listing.title }}</strong></a> <br>
                             {% if listing.sold %}
-                            SOLD for ${{ listing.latest_bid.bid_amount }} <img class="sold_icon" src="static/auctions/img/icon2_sold_yellow.png">
+                            SOLD for ${{ listing.latest_bid.bid_amount }} <img class="sold_icon" src="{% static 'auctions/img/icon2_sold_yellow.png' %}">
                             {% elif listing.latest_bid.bid_amount %}
-                            Highest Bid ${{ listing.latest_bid.bid_amount | intcomma }} <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                            Highest Bid ${{ listing.latest_bid.bid_amount | intcomma }} <img class="sold_icon" src="{% static 'auctions/img/bid_open_icon.png' %}">
                             {% else %}
-                            Be the first to bid!!! <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                            Be the first to bid!!! <img class="sold_icon" src="{% static 'auctions/img/bid_open_icon.png' %}">
                             {% endif %}
                         </h5>
                     </li>
@@ -47,8 +48,11 @@
                             <br>
                             <strong>Starting Bid: ${{ listing.starting_price | intcomma}}</strong>
                             <br>
-                            {% if listing.sold %}
-                                <strong>** SOLD for ${{ listing.latest_bid.bid_amount | intcomma}}  to {{ listing.latest_bid.bid_owner}} **</strong>  
+                            {% if listing.latest_bid.bid_owner == request.user and listing.sold %}
+                                <strong>* You won this bid for ${{ listing.latest_bid.bid_amount | intcomma}} *</strong>
+
+                            {% elif listing.sold %}
+                                <strong>* SOLD for ${{ listing.latest_bid.bid_amount | intcomma}}  to {{ listing.latest_bid.bid_owner}} *</strong>  
                                 {% elif listing.latest_bid.bid_amount %}
                                 Highest Bid: <strong>${{ listing.latest_bid.bid_amount | intcomma}}</strong> placed by <strong>{{ listing.latest_bid.bid_owner }}</strong>
                                 <br>

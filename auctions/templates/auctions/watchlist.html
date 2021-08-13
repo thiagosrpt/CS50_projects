@@ -15,7 +15,7 @@
                         {% if listing.listing_id.sold %}
                         SOLD for ${{ listing.listing_id.latest_bid.bid_amount | intcomma  }} to {{ listing.listing_id.latest_bid.bid_owner }} <img class="sold_icon" src="static/auctions/img/icon2_sold_yellow.png">
                         {% elif listing.listing_id.latest_bid.bid_amount  %}
-                        Highest Bid ${{ listing.listing_id.latest_bid.bid_amount  | intcomma }} <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                        Highest Bid ${{ listing.latest_bid.bid_amount | intcomma }} <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
                         {% else %}
                         Be the first to bid!!! <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
                         {% endif %}

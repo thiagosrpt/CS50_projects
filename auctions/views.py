@@ -111,6 +111,8 @@ def listing(request, listing):
                 #Last bid may return none, for new listings, if makes sure it'd det to 0 for validation
                 last_bid = Listing.objects.filter(id=listing).values('latest_bid')
                 last_bid = last_bid[0]['latest_bid']
+                last_bid = Bid.objects.filter(id=last_bid).values('bid_amount')
+                last_bid = last_bid[0]['bid_amount']
                 if last_bid is None:
                     last_bid = 0
                 else:
@@ -123,7 +125,7 @@ def listing(request, listing):
                 sold = Listing.objects.filter(id=listing).values('sold')
                 sold = sold[0]['sold']
 
-                if (last_bid == 0 and current_bid > starting_price) or (current_bid > last_bid and current_bid > starting_price) and sold == False:
+                if (current_bid > starting_price and current_bid > last_bid and sold == False):
                     highest_bid = Bid.objects.create(
                         bid_amount=current_bid,
                         bid_owner =user,
