@@ -1,0 +1,39 @@
+{% extends "auctions/layout.html" %}
+{% load humanize %}
+
+{% block body %}
+
+    <h2>Auctions you are following: </h2>
+
+    <div class="wrapper_index">
+        {% for listing in watchlist %}
+            <div class="wrapper-div">
+                <br>
+                <ul>
+                    <li>
+                        <h5><a href="{% url 'listing' listing.listing_id.id %}"><strong>{{ listing.listing_id.title}}</strong></a> | <br>
+                        {% if listing.listing_id.sold %}
+                        SOLD for ${{ listing.listing_id.latest_bid.bid_amount | intcomma  }} to {{ listing.listing_id.latest_bid.bid_owner }} <img class="sold_icon" src="static/auctions/img/icon2_sold_yellow.png">
+                        {% elif listing.listing_id.latest_bid.bid_amount  %}
+                        Highest Bid ${{ listing.latest_bid.bid_amount | intcomma }} <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                        {% else %}
+                        Be the first to bid!!! <img class="sold_icon" src="static/auctions/img/bid_open_icon.png">
+                        {% endif %}
+                        </h5>
+                    </li>
+
+                    <li><img class="listing_image_index" src="{{ listing.listing_id.photo }}" alt="{{ listing.listing_id.title }}"></li>
+                    <br>
+                    <li><a>Highest Bid: ${{ listing.listing_id.latest_bid.bid_amount | intcomma }}</a></li>
+                    <br>
+                    <li><a>Starting at: ${{ listing.listing_id.starting_price | intcomma }}</a></li>
+                    <li><a>Added to Watchlist on: {{ listing.added_watchlist_on }}</a></li>
+                    <br>
+                </ul>
+            </div>
+        {% empty %}
+                <div>No items being watched.</div>
+        {% endfor %}
+    </div>
+    
+{% endblock %}
