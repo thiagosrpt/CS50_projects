@@ -110,12 +110,12 @@ function email_content(id, mailbox) {
       <br> 
       <div id="wrapper">
         <div class="email-buttons">
-          <button class="btn-email" id="reply">Reply</button>
-          <button class="btn-email" id="replyAll">Reply All</button>
-          <button class="btn-email" id="read">${email["read"] ? "Mark as Unread" : "Mark as Read"}</button>
+          <button class="btn btn-primary" id="reply">Reply</button>
+          <button class="btn btn-primary" id="replyAll">Reply All</button>
+          <button class="btn btn-primary" id="read">${email["read"] ? "Mark as Unread" : "Mark as Read"}</button>
         </div>
         <div class="archived">
-          <button class="btn-email" id="archive">${email["archived"] ? "Unarchive" : "Archive"}</button>
+          <button class="btn btn-primary" id="archive">${email["archived"] ? "Unarchive" : "Archive"}</button>
         </div>
       </div>
 
