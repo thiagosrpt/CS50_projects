@@ -8,13 +8,13 @@ converter = Markdown()
 
 class New_Entry(forms.Form):
     title = forms.CharField(label= "Title")
-    content = forms.CharField(widget=forms.Textarea(), label='')
+    content = forms.CharField(widget=forms.Textarea(), label='Content-Text')
 
 class Query(forms.Form):
     tag = forms.CharField(label='New Search')
 
 class Edit(forms.Form):
-    content = forms.CharField(widget=forms.Textarea(), label='')
+    content = forms.CharField(widget=forms.Textarea(), label='Content-Text')
 
 
 def edit(request, title):
