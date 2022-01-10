@@ -1,0 +1,92 @@
+.center {
+    text-align: center;
+    background-color: rgb(247, 251, 255);
+}
+
+.following {
+    background-color: rgb(255, 255, 225);
+}
+
+.fieldwrapper{
+	background-color: none;
+	width: 100%;
+	height: 90px;
+    text-align:center
+}
+
+.form-control-2 {
+    width: 100%;
+    height: 50px;
+    background-color:rgb(253, 255, 255);
+    float:left;
+    display:block
+}
+
+.form-control-3 {
+    width: 80%;
+    height: 35px;
+    background-color:rgb(255, 255, 255);
+    float:left;
+    display:block;
+    margin: 0px 5px 0px 0px;
+}
+
+
+.my-buttons-wrapper {
+    background-color: none;
+	width: 100%;
+	height: 30px;
+    text-align:center;
+
+}
+
+/* Like, Edit, Save and Cancel buttons at post level*/
+.my-buttons {
+    width: 100%;
+    height: 30px;
+}
+
+/* ALL BUTTONS */
+.btn {
+    float:left;
+    margin: -4px 5px 10px 0px;
+}
+
+/* SEND Button to post new content when logged in*/
+.send {
+    float:left;
+    display:block;
+    margin: 10px 0px 0px 0px;
+}
+
+#h2-posts {
+    background-color: none;
+    text-align: center;
+}
+
+.bg {
+    background-image: linear-gradient(rgb(206, 238, 255), rgb(224, 244, 255), rgb(166, 224, 255),rgb(224, 244, 255));
+    border: 1px dotted rgb(68, 190, 255);
+    padding: 40px 60px 40px 60px;
+}
+
+.alert {
+    background-color: rgba(255, 255, 255, 0.6);
+    border: 1px dotted rgb(68, 190, 255);
+    padding: 10px 10px 10px 10px;
+}
+
+.post-content {
+    background-color: white;
+}
+
+.follow_counts {
+    background-color:  rgb(43, 181, 255);
+    color: white
+}
+
+.hidden {
+    display: none
+}
+
+
