@@ -1,0 +1,336 @@
+/* color shades/paterns */
+.color_shade {
+    color: #BF5639;
+    color: #803A26;
+    color: #FE724C;
+    color: #ffe6df;
+    color: #401D13;
+    color: #272d2f;
+    color: #66757A;
+    color: #9BB2BA;
+    color: #d7d7d7;
+    color: #eeeeee;
+    color: #ffc529
+}
+
+/* ---------------------- */
+
+body {
+    background-color: #FE724C;
+}
+
+.login-logo{
+    width: 200px;
+    height: 200px;
+    margin-left: 100px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, p, span {
+    color: #66757A;
+}
+
+
+
+.background_auth {
+    background-image: linear-gradient(#f9af9b,#FE724C, );
+    position: relative;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    z-index:1000;
+}
+
+.background { /* not auth */
+    background-color:#f77a57;
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+
+.btn-warning {
+    background-color: #803A26;
+    color: white;
+    border: none;
+}
+
+.btn-warning:hover, .btn-danger:hover, .btn-success:hover {
+    background-color: #ffc529;
+    color: white;
+}
+
+.contol-event {
+    margin-bottom: 3px;
+}
+
+.match-count {
+    text-align: center;
+    align-content: center;
+    background-color: rgb(26, 177, 26);
+    color: white;
+    font-size: 16pt;
+    height: 100%;
+    width: 150px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 15%;
+}
+
+
+a {
+    color: #803A26;
+}
+
+a:hover {
+    color: #ffc529;
+}
+
+.form-control {
+    border: 0px;
+    background-color: #ffe6df;
+
+}
+
+
+/* Login page */
+.login-box-container {
+    width: 450px;
+    height: 560px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    border: none;
+    margin: -230px 0 0 -225px; /* Apply negative top and left margins to truly center the element */
+}
+
+.login-box {
+    width: 400px;
+    height: 400px;
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin: -150px 0 0 -200px; /* Apply negative top and left margins to truly center the element */
+}
+
+/* Reistration page */
+.register-box-container {
+    width: 450px;
+    height: 700px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    border: none;
+    margin: -350px 0 0 -225px; /* Apply negative top and left margins to truly center the element */
+}
+
+.register-box {
+    width: 400px;
+    height: 700px;
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -350px 0 0 -200px; /* Apply negative top and left margins to truly center the element */
+}
+
+
+/* Create Event View Styles */
+
+
+.create-view-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fffffff3;
+    top: 0%;
+    left: 0%;
+    margin: -0% 0 0 -0%; /* Apply negative top and left margins to truly center the element */
+    text-align: left;
+    display: none;
+    position: absolute !important;
+    z-index:999999 !important;
+}
+
+    .create-view {
+        width: 400px;
+        height: 500px;
+        /* Center vertically and horizontally */
+        top: 40%;
+        left: 50%;
+        margin: -200px 0 0 -200px; /* Apply negative top and left margins to truly center the element */
+        text-align: left;
+        position:absolute !important;
+        z-index:999999 !important;
+    }
+
+        .checkbox-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 30px;
+            justify-content: left;
+        }
+
+            .checkbox {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 10px;
+                align-items: center;
+                justify-content: left;
+            }
+/* ------ END CREATE EVENT VIEW ------ */
+
+/*------ MAIN VIEW EVENTS ------ */
+.navbar {
+    background-color: #803A26;
+    align-content: center;
+    justify-content: center;
+    color:white;
+}
+
+.logo-top-bar {
+    height: 100px;
+    width: auto;
+    object-fit: cover;
+    object-position: 0px 30px 100px 0px; 
+}
+
+.boxes-event {
+    background-color: white;
+}
+
+.container {
+    padding: 5px;
+    min-width: 400px;
+}
+
+.buttons-top-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 6px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+}
+
+
+/* control buttons main view and event view */
+.button {
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    margin: 0px;
+}
+
+
+/* Buttons at the event view bottom */
+.buttons-bottom-event-menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 6px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0px;
+}
+
+.matches-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr;
+    grid-gap: 3%;
+    justify-content: left;
+    background-color: white;
+}
+
+.event-food-details{
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    grid-gap: 5%;
+    justify-content: left;
+    background-color: white;
+}
+
+.event-food-details-image{
+    width: 100%;
+    max-width: 500px;
+    min-width: 30%;
+    height: auto;
+}
+
+.eventbox-main {
+    display: grid;
+    grid-template-columns: 3fr 6fr 1fr;
+    grid-gap: 3%;
+    justify-content: left;
+    background-color: white;
+}
+
+.main_thumb {
+    width: 100%;
+    margin-top: 5px;
+    border-radius: 15px;
+    border: 1px double;
+    border-color: #ffc529;
+    border-spacing: 10px;
+}
+
+.label_fields {
+    font-size: 9pt;
+    color: #803A26;
+    display: inline-block;
+}
+
+
+
+/* ---- TAGS DELIVERY PICK UP DINE IN --- */
+.tag-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    align-content: center;
+    justify-content: center;
+}
+
+.tag {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+    background-color: #ffffff;
+    border: #ffc529 solid 1px;
+    border-radius: 25px;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.delivery, .pickup, .dinein  {
+    background-color: #236a00;
+    border: #3cd035 solid 1px;
+    color: #ffffff;
+}
+
+.nope { /* icons yummy nope */
+    height: auto;
+    max-width: 50%;
+    min-width: 80px;
+}
+
+.yummy { /* icons yummy nope */
+    height: auto;
+    max-width: 60%;
+    min-width: 100px;
+}
+
+.contol-event {
+    width: 100%;
+}
+
+
