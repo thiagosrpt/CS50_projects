@@ -5,54 +5,7 @@
 
 {% block body %}
 
-<div class="background_auth">
-      <!-- CREATE VIEW DEFAULTED TO DISPLAY:NONE -->
-      <div id="create-view" class="create-view-container">
-        <div id="like"></div> <!-- listerner issue in JS-->
-        <div class="background_auth" id="dislike"></div> <!-- listerner issue in JS-->
-        <div class="create-view">
-            <h3>New Event</h3>
-                <form id="create-event-form">
-                        <div class="form-group">
-                            <input disabled class="form-control" id="organizer" value="{{ request.user.email }}">
-                        </div>
-
-                        <div class="form-group">
-                            <input class="form-control" id="event_name" placeholder="Event Name">
-                        </div>
-
-                        <div class="form-group">
-                            <input id="participants" class="form-control" placeholder="Who's helping you decide?">
-                        </div>
-                        <br>
-                        <div class="checkbox-list">
-                                <div class="checkbox">
-                                    <input id="delivery" name="considering" value="True" class="form-control" type="radio" class="form-control" checked="checked" >
-                                    <label for="delivery">Delivery</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input id="pickup" name="considering" value="True" class="form-control" type="radio" class="form-control" checked="checked">
-                                    <label for="pickup">Pickup</label>
-                                </div>
-                                <div class="checkbox">
-                                    <input id="dinein" name="considering" value="True" class="form-control" type="radio" class="form-control" checked="checked" >
-                                    <label for="dinein">Dinein</label>
-                                </div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <div class="date">
-                                <br>
-                                <input type="datetime-local" class="form-control" id="event_date" name="date">
-                            </div>
-                        </div>
-
-                        <input type="submit" type="button" id="submit-edit" class="btn btn-warning"/>
-                        <button class="btn btn-warning" id="close_window">Close</button>
-                </form>
-        </div>
-    </div>
-    <!-- CREATE VIEW DEFAULTED TO DISPLAY:NONE -->
+{% include "milestone/new_event.html" %} 
 
     
     <div>

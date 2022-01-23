@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
       event.onclick = function() {            
           delete_event(this.dataset.eventId);
       }
+      .then(
+        window.location.reload()
+    )
     })
 
     document.querySelectorAll('#edit_event').forEach(event => {
@@ -76,11 +79,11 @@ function edit_event(eventId) {
                         </div>
                         <div class="checkbox">
                             <input id="pickup" name="considering" value="True" class="form-control" type="radio" checked="checked">
-                            <label for="pickup">Pickup</label>
+                            <label for="pickup">Pick-up</label>
                         </div>
                         <div class="checkbox">
                             <input id="dinein" name="considering" value="True" class="form-control" type="radio" checked="checked">
-                            <label for="dinein">Dinein</label>
+                            <label for="dinein">Dine-in</label>
                         </div>
                 </div>
                 <br>

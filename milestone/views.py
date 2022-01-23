@@ -8,12 +8,7 @@ import json
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-import random
-from django.db.models import Q
-from django.db.models import CharField, IntegerField, Value, F
 from django.db.models import Count
-from django.core import serializers
-from django.core.serializers.json import DjangoJSONEncoder
 
 #####INDEX####
 def matches(request, eventId):
@@ -116,7 +111,14 @@ def like(request, eventId):
    
 
 def foods(delivery, pickup, dinein, user , eventId):
-    foods = Food.objects.filter(Q(delivery=delivery) | Q(pickup=pickup) | Q(dinein=dinein)).order_by('?')
+
+    if delivery == True:
+        foods = Food.objects.filter(delivery=delivery).order_by('?')
+    elif pickup == True:
+        foods = Food.objects.filter(pickup=pickup).order_by('?')
+    elif dinein == True:
+        foods = Food.objects.filter(dinein=dinein).order_by('?')
+
     for item in foods:
         try:
             Like.objects.get(user=user, food=item, event=eventId)
@@ -129,7 +131,13 @@ def foods(delivery, pickup, dinein, user , eventId):
         return food
 
     except:
-        food = Food.objects.filter(Q(delivery=delivery) | Q(pickup=pickup) | Q(dinein=dinein)).order_by('?').first()
+        if delivery == True:
+            food = Food.objects.filter(delivery=delivery).order_by('?').first()
+        elif pickup == True:
+            food = Food.objects.filter(pickup=pickup).order_by('?').first()
+        elif dinein == True:
+            food = Food.objects.filter(dinein=dinein).order_by('?').first()
+        
         return food
 
 
@@ -137,7 +145,13 @@ def eventview(request, eventId):
     if request.user.is_authenticated:
         if request.method == "GET":
             event = Event.objects.get(id=eventId)
-            food_prompt = foods(event.delivery, event.pickup, event.dinein, request.user , eventId)
+            if event.delivery == True:
+                food_prompt = foods(event.delivery, False, False, request.user , eventId)
+            elif event.pickup == True:
+                food_prompt = foods(False, event.pickup, False, request.user , eventId)
+            elif event.dinein == True:
+                food_prompt = foods(False, False, event.dinein, request.user , eventId)
+
             try:
                 like_status = Like.objects.get(user=request.user, event=eventId, food=food_prompt)
                 liked = like_status.like
