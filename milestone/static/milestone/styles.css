@@ -15,8 +15,13 @@
 
 /* ---------------------- */
 
-body {
-    background-color: #FE724C;
+html, body {
+    background-image: url('images/tiled-background-or-seamless-pattern-vector-19064391.jpeg');
+    background-repeat: repeat;
+    height: 100%;
+    margin: 0;
+    overflow-x:hidden;
+    color: #66757A;
 }
 
 .login-logo{
@@ -35,17 +40,12 @@ h1, h2, h3, h4, h5, p, span {
 
 
 .background_auth {
-    background-image: linear-gradient(#f9af9b,#FE724C, );
-    position: relative;
-    width:100%;
-    height:100%;
-    top:0px;
-    left:0px;
-    z-index:1000;
+    background-image: white;
+    height: 100%;
 }
 
 .background { /* not auth */
-    background-color:#f77a57;
+    background-image: white;
     position: absolute;
     width:100%;
     height:100%;
@@ -97,15 +97,15 @@ a:hover {
 
 /* Login page */
 .login-box-container {
-    width: 450px;
-    height: 560px;
-    border-radius: 10px;
+    width: 30%;
+    min-width: 450px;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 0%;
+    left: 0%;
     border: none;
-    margin: -230px 0 0 -225px; /* Apply negative top and left margins to truly center the element */
+    margin: -0px 0 0 -0px; /* Apply negative top and left margins to truly center the element */
 }
 
 .login-box {
@@ -120,15 +120,15 @@ a:hover {
 
 /* Reistration page */
 .register-box-container {
-    width: 450px;
-    height: 700px;
-    border-radius: 10px;
+    width: 65%;
+    min-width: 800px;
+    height: 100%;
     background-color: rgb(255, 255, 255);
     position: absolute;
-    top: 40%;
-    left: 50%;
+    top: 0%;
+    left: 35%;
     border: none;
-    margin: -350px 0 0 -225px; /* Apply negative top and left margins to truly center the element */
+    margin: 0px 0 0 0px; /* Apply negative top and left margins to truly center the element */
 }
 
 .register-box {
@@ -137,8 +137,35 @@ a:hover {
     /* Center vertically and horizontally */
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin: -350px 0 0 -200px; /* Apply negative top and left margins to truly center the element */
+    left: 2%;
+    margin: -350px 0 0 0px; /* Apply negative top and left margins to truly center the element */
+}
+
+.image_register {
+    width: auto;
+    min-width: 100px;
+    height: 100%;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 0%;
+    left: 0%;
+    border: none;
+    margin: 0px 0 0 -225px; /* Apply negative top and left margins to truly center the element */
+
+}
+
+.image_login {
+    width: auto;
+    min-width: 100px;
+    height: 100%;
+    border-radius: 0;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+    top: 0%;
+    left: 40%;
+    border: none;
+    margin: 0px 0 0 -225px; /* Apply negative top and left margins to truly center the element */
 }
 
 
@@ -271,6 +298,7 @@ a:hover {
     grid-gap: 3%;
     justify-content: left;
     background-color: white;
+
 }
 
 .main_thumb {
