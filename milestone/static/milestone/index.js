@@ -18,10 +18,8 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('#delete_event').forEach(event => {
       event.onclick = function() {            
           delete_event(this.dataset.eventId);
+          window.location.reload()
       }
-      .then(
-        window.location.reload()
-    )
     })
 
     document.querySelectorAll('#edit_event').forEach(event => {
