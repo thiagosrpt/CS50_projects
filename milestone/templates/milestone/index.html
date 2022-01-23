@@ -1,0 +1,116 @@
+
+{% extends "milestone/layout.html" %}
+
+{% load static %}
+
+{% block body %}
+
+{% include "milestone/new_event.html" %} 
+
+    
+    <div>
+        <!-- Content Events -->
+        <div class="container">
+
+            <div class="buttons-top-menu">
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a class="nav-link" href="{% url 'myevents' %}"><strong>{{ user.username }}</strong></a>
+                </div>
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a class="nav-link" href="{% url 'index' %}" id="username">All Events</a>
+                </div>
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a id="new_event" class="nav-link" href="#">New Event</a>
+                </div>
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a class="nav-link" href="{% url 'logout' %}">LogOut</a>
+                </div>
+            </div>
+
+            <div class="shadow-none bg">
+                {% for event in events %}
+                        <div class="eventbox-main shadow-sm p-4 mb-2 bg-body rounded" data-event-id={{event.id}} href="event/{{event.id}}">
+
+                            <div id="thumbnail">
+                                
+                                {% if event.delivery == True %}
+                                <img class="main_thumb"
+                                src="{% static 'milestone/images/delivery.jpeg' %}">
+                                {% endif %}
+                                {% if event.pickup == True %} 
+                                <img class="main_thumb"
+                                src="{% static 'milestone/images/takeout.jpeg' %}">
+                                {% endif %}
+                                {% if event.dinein == True %}
+                                <img class="main_thumb"
+                                src="{% static 'milestone/images/dinein.jpeg' %}">
+                                {% endif %}
+                            </div>
+
+                            <div id="event_info event_info-{{ event.id }}">
+                                <a id="event_view" href="event/{{event.id}}" data-event-id={{event.id}} class="{{event.id}}"> 
+                                    <div class="name-{{ event.id }}"><h4 class="event_name-{{ event.id }}">{{ event.name }}</h4></div> 
+                                    <div class="date-{{ event.id }}">{{event.date}}</div> </a>
+                                <br>
+                                {% if event.likes > 1 %}
+                                <strong>{{event.likes}} likes</strong>, it looks like we have some good options.
+                                {% else %}
+                                No good options for this yet.
+                                {% endif %}
+                                <hr>
+                                <span class="label_fields">Organizer</span> 
+                                <span class="organizer-{{ event.id }}">
+                                    {{ event.organizer }}
+                                </span>
+                                <br>
+                                    <span class="label_fields">Participants</span>
+                                    <span class="participants-{{ event.id }}">
+                                        {% for user in event.participants %} 
+                                            {{ user }}, 
+                                            {% endfor %}
+                                    </span>
+                                <hr>
+                                <span class="label_fields">Considering </span>
+                                <div class="tag-list">
+                                    {% if event.delivery == True %}
+                                    <div class="tag delivery considering-{{ event.id }}">
+                                    Delivery </div>
+                                    {% endif %}
+                                    {% if event.pickup == True %} 
+                                    <div class="tag pickup considering-{{ event.id }}"> Take-Out </div> 
+                                    {% endif %}
+                                    {% if event.dinein == True %}
+                                    <div class="tag dinein considering-{{ event.id }}"> Dine-In </div> 
+                                    {% endif %}
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <form>
+                                        <a class="contol-event btn btn-success" id="event_matches" data-event-id="{{event.id}}" type="button" href="matches/{{event.id}}">
+                                            Matches
+                                        </a>
+                                    </form>
+                                </div>
+                                {% if user.username == event.organizer %}
+                                <div>
+                                    <form>
+                                        <button class="contol-event btn btn-warning" id="edit_event" data-event-id="{{event.id}}" type="button">Edit</button>
+                                    </form>
+                                </div>
+                                <div id="delete_event" data-event-id="{{event.id}}">
+                                    <form>
+                                        <button class="contol-event btn btn-danger">Delete</button>
+                                    </form>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                {% endfor %}
+            </div>
+
+        </div><!-- body continer -->
+    </div><!-- body background -->
+
+</div>
+{% endblock %}
