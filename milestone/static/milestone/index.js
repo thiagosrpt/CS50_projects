@@ -1,6 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    document.querySelector('#new_event').addEventListener('click', new_event);
+    //document.querySelector('#new_event').addEventListener('click', new_event);
+
+    //display new event window with animation fade-in
+    const new_event = document.querySelector('.create-view-container');
+
+    // Stop animation initially
+    new_event.style.animationPlayState  = 'paused';
+    new_event.style.display = 'none';
+
+    // Toggle animation on click
+    document.querySelector('#new_event').onclick = () => {
+        new_event.style.animationPlayState = 'running';
+        new_event.style.display = 'block';
+    };
+
+
+
+
     document.querySelector('#close_window').addEventListener('click', close_window);
     
     
@@ -99,6 +116,7 @@ function edit_event(eventId) {
 
   window.scrollTo(1, 1);
   document.querySelector(".create-view-container").style.display = 'block';
+  document.querySelector(".create-view-container").style.animationPlayState = 'running';
   document.querySelector("#create-event-form").onsubmit = () => {
     submit_edit_event(eventId);
 }
@@ -172,7 +190,9 @@ function event_view(eventId) {
 
 function new_event() {
     // Show create event window
-    document.querySelector('.create-view-container').style.display = 'block';
+    //document.querySelector('.create-view-container').style.display = 'block';
+    const new_event = document.querySelector('.create-view-container');
+    new_event.style.animationPlayState = 'paused';
   }
 
 function close_window() {

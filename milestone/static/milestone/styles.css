@@ -24,6 +24,34 @@ html, body {
     color: #66757A;
 }
 
+@keyframes move {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+
+.create-view-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fffffff3;
+    top: 0%;
+    left: 0%;
+    margin: -0% 0 0 -0%; /* Apply negative top and left margins to truly center the element */
+    text-align: left;
+    display: none;
+    position: absolute !important;
+    z-index:999999 !important;
+    animation-name: move;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 0%;
+}
+
 .login-logo{
     width: 200px;
     height: 200px;
@@ -172,18 +200,7 @@ a:hover {
 /* Create Event View Styles */
 
 
-.create-view-container {
-    width: 100%;
-    height: 100%;
-    background-color: #fffffff3;
-    top: 0%;
-    left: 0%;
-    margin: -0% 0 0 -0%; /* Apply negative top and left margins to truly center the element */
-    text-align: left;
-    display: none;
-    position: absolute !important;
-    z-index:999999 !important;
-}
+
 
     .create-view {
         width: 400px;
