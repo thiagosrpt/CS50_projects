@@ -1,0 +1,69 @@
+{% extends "milestone/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <div class="background_auth">
+        <!-- Content Events -->
+        <div class="container">
+
+            <div class="buttons-bottom-event-menu">
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a id="dislike" class="nav-link" href="/event/{{event.id}}">
+                        <img class="nope" src="{% static 'milestone/images/Nope.png' %}">
+                    </a>
+                </div>
+
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a class="nav-link" href="{% url 'index' %}">Main Page</a>
+                    <a class="nav-link" href="/matches/{{event.id}}">Event Matches</a>
+                </div>
+
+                <div class="button shadow-sm p-4 mb-2 bg-body rounded">
+                    <a id="like" class="nav-link" href="/event/{{event.id}}">
+                        <img class="yummy" src="{% static 'milestone/images/Yummy.png' %}">
+                    </a>
+                </div>
+            </div>
+
+            <div class="shadow-none bg">
+                <div id="event_view" class="boxes-event shadow-sm p-4 mb-2 bg-body rounded event_view" data-event-id={{event.id}}>
+
+                    <h5 id="event_in_view" class="{{event.id}}" class="event_view" href="#" data-event-id={{event.id}}> {{ event.name }} | {{event.date}} </h5>
+                    Participants: {% for user in event.participants %} {{ user }}, {% endfor %}<br>
+                    <br id="new_event">
+                    <div id="close_window">
+                    <div id="create-event-form">
+                    <h3 id="food_in_view" class="{{ food.id }}" data-food-id="{{food.id}}">{{ food.name }}</h3>
+
+                    <div class="event-food-details">
+                        <div>
+                            <img class="event-food-details-image" src="{{ food.image_url }}">
+                        </div>
+                        <div>
+                            <span class="label_fields">Ratings </span><span> {{ food.ratings }} starts</span><br>
+                            <span class="label_fields">Distance </span> <span>{{ food.distance }} miles away</span><br>
+                            <span><a href="{{ food.site }}" target="_blank">check the menu, order, or reserve table.</a></span>
+                            <br>
+                            <span>{{ liked }}, and {{ likes }} other participants liked this.</span>
+                            <br><br>
+                            <div class="tag-list">
+                                {% if event.delivery == True %}<div class="tag delivery"> Delivery </div> {% endif %}
+                                {% if event.pickup == True %}<div class="tag pickup"> Take-Out </div> {% endif %}
+                                {% if event.dinein == True %}<div class="tag dinein"> Dine-In </div>  {% endif %}
+                            </div>
+                            <hr>
+                            <span class="label_fields">Description </span> <span>{{ food.description }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div><!-- body continer -->
+
+    </div><!-- body background -->
+
+
+{% endblock %}
