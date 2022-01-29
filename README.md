@@ -12,65 +12,64 @@ The complexity comes from the ability to create and edit the event and then buil
 
 > File Description and Contributions
 
-- The name of the DJANGO Project is Capstone and within it, I created an app called Milestone - I did not know what app I wanted to build initially, but concluding this course certainly is a 'milestone'. The following are the files I have contributed code for and their contents:
+The name of the DJANGO Project is Capstone and within it, I created an app called Milestone - I did not know what app I wanted to build initially, but concluding this course certainly is a 'milestone'. The following are the files I have contributed code for and their contents:
 
 >milestone/views.py
-- The code here was entirely written by me. This contains all the necessary functions to render the pages and retrieve the desired information for the 'ALL EVENTS' page and 'USER'S EVENT PAGES'. This also contains the functions that support the randomization of options within each event as well as the logic that summarizes the likes for each restaurant/food option that the user sees after clicking to see the 'matches' of an event.
-- The functions that created and modify an event can also be seen here.
+  - The code here was entirely written by me. This contains all the necessary functions to render the pages and retrieve the desired information for the 'ALL EVENTS' page and 'USER'S EVENT PAGES'. This also contains the functions that support the randomization of options within each event as well as the logic that summarizes the likes for each restaurant/food option that the user sees after clicking to see the 'matches' of an event.
+  - The functions that created and modify an event can also be seen here.
 
 >milestone/urls.py
-- This contains all the URLs the app pings in order to retrieve data, create or update an object.
+  - This contains all the URLs the app pings in order to retrieve data, create or update an object.
 
 >milestone/models.py
-- I have created four tables to support the logic I had in mind for this project and those can be found here.
+  - I have created four tables to support the logic I had in mind for this project and those can be found here.
 
-- 'Food' table/model: This is used to store all the information about the restaurants and food options - In the real world, this data could be supplied by an API, for instance.
+  - 'Food' table/model: This is used to store all the information about the restaurants and food options - In the real world, this data could be supplied by an API, for instance.
 
-- 'Event' table/module: This contains the details about an event. Event Name, Organizer, Participants, etc.
+  - 'Event' table/module: This contains the details about an event. Event Name, Organizer, Participants, etc.
 
-- 'Likes' table/module: This contains the likes given for a single food/restaurant within an event. One record is created to represent the like and the record will contain the USER ID who performed the action, the EVENT this action belongs to, and a checkbox that indicates whether it's a true=like or a false=dislike.
+  - 'Likes' table/module: This contains the likes given for a single food/restaurant within an event. One record is created to represent the like and the record will contain the USER ID who performed the action, the EVENT this action belongs to, and a checkbox that indicates whether it's a true=like or a false=dislike.
 
-- 'Users' table/module: this remains the same as standard from DJANGO.
+  - 'Users' table/module: this remains the same as standard from DJANGO.
 
-- 'LikeSerializer' Class: This class was created just so the response obtained by the 'views.py > match function could be serialized properly with the 'total_likes' grouped Restaurants that received likes within an event.
+  - 'LikeSerializer' Class: This class was created just so the response obtained by the 'views.py > match function could be serialized properly with the 'total_likes' grouped Restaurants that received likes within an event.
 
 >milestone/static/milestone/index.js
-- This contains all the event listers and functions used to access the functions in views.py. There is a listener function that displays a DIV for when an event needs to be created or modified. A function to delete an event and display an event to ensure the user really wants to delete the event, then once the deletion is confirmed the script will refresh the page.
+  - This contains all the event listers and functions used to access the functions in views.py. There is a listener function that displays a DIV for when an event needs to be created or modified. A function to delete an event and display an event to ensure the user really wants to delete the event, then once the deletion is confirmed the script will refresh the page.
 
 >milestone/static/milestone/style.css
-- This contains all the CSS used to adjust and modify the structure of the pages.
+  - This contains all the CSS used to adjust and modify the structure of the pages.
 
 >milestone/templates/milestone/...
 
-- event.html > This is a single event view where the user can 'like' and 'dislike' the randomly presented options.
+  - event.html > This is a single event view where the user can 'like' and 'dislike' the randomly presented options.
 
-- index.html > This is the main view where events in which the user participates are listed.
+  - index.html > This is the main view where events in which the user participates are listed.
 
-- matches.html > This is the page on which the total likes by a restaurant for a particular event is summarized. Here is where the user can see which event received the most likes, for instance.
+  - matches.html > This is the page on which the total likes by a restaurant for a particular event is summarized. Here is where the user can see which event received the most likes, for instance.
 
-- new_event.html > This is an overlay page that gets displayed over the main page when the user wishes to modify or create an event.
+  - new_event.html > This is an overlay page that gets displayed over the main page when the user wishes to modify or create an event.
 
-- login.html > This is the standard login page, but the layout/design has been changed.
+  - login.html > This is the standard login page, but the layout/design has been changed.
 
-- resgiter.html > This is the standard register page, but the layout/design has been changed, and FIRST and LAST NAME was added to the registration form.
-
+  - resgiter.html > This is the standard register page, but the layout/design has been changed, and FIRST and LAST NAME was added to the registration form.
 
 > Libraries
 
 These are the libraries imported into Views.py and Modules.py in order for the app to function properly.
 
 * VIEWS *
-- from django.contrib.auth import authenticate, login, logout
-- from django.db import IntegrityError
-- from django.http import HttpResponse, HttpResponseRedirect
-- from django.shortcuts import render
-- from django.urls import reverse
-- from django.http import JsonResponse
-- import json
-- from .models import *
-- from django.views.decorators.csrf import csrf_exempt
-- from django.contrib.auth.decorators import login_required
-- from django.db.models import Count
+  - from django.contrib.auth import authenticate, login, logout
+  - from django.db import IntegrityError
+  - from django.http import HttpResponse, HttpResponseRedirect
+  - from django.shortcuts import render
+  - from django.urls import reverse
+  - from django.http import JsonResponse
+  - import json
+  - from .models import *
+  - from django.views.decorators.csrf import csrf_exempt
+  - from django.contrib.auth.decorators import login_required
+  - from django.db.models import Count
 
 * MODULES *
-- from rest_framework import serializers
+  - from rest_framework import serializers
