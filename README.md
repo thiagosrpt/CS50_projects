@@ -1,16 +1,16 @@
 # thiagosrpt
 
-> Distinctiveness and Complexity <
+> Distinctiveness and Complexity
 
 I believe my project satisfies the distinctiveness and complexity requirements proposed because the idea is somewhat different from previous projects of this course. It does use some similar concepts, like using emails to invite users to participate like in the email app, but the concept of randomly presenting restaurants/options of food and creating matches based on the "likes" from participants of an event makes it unique and distinct from other projects.
 
 The complexity comes from the ability to create and edit the event and then build all the functions that will interact with the events created by the user. Also in order to execute this idea, different queries must be done to retrieve the necessary data - The restaurants/places presented within an event must consider what the user is planning on, such as dine-in, pick-up, or delivery (it also prioritizes places that were not voted by the logged-in user yet before its starts repeating/presenting the same venue again). The event matches feature was also challenging as I had to understand how I could build a query to calculate the total of "likes" by restaurant within a given event by using the annotate function and properly serializing the output of the QuerySet it returns. JS is mainly used to display the Create/Edit window, it adjusts the screen to make the scroll bar gets positioned where the Create/Edit window is displayed as well as to commit the creation and edits of a new event. I also used JS to ensure the pages are reloaded when an event is created or edited.
 
-> Purpose / App Use Case <
+> Purpose / App Use Case
 
 "So, what are we eating?" is an app to help people pick a place for them to eat in which every participant can chime in. One user creates an event and invites other users to participate. From there, the app will randomly present users with place options that fit the criteria entered for the event - like a Tinder for restaurants. Maybe they want to get food delivered or picked up, or perhaps find a place where they can all sit down and have a good time. Based on the user votes, the app will show the matches organized by what's closer and with higher ratings (an event will present the full list of all options that have at least one match, but the closest options, with more matches and better rated, will always be at the top of the list - so a second and third option can also be seen on the list as a backup plan).
 
-> File Description and Contributions <
+> File Description and Contributions
 
 - The name of the DJANGO Project is Capstone and within it, I created an app called Milestone - I did not know what app I wanted to build initially, but concluding this course certainly is a 'milestone'. The following are the files I have contributed code for and their contents:
 
@@ -55,9 +55,11 @@ The complexity comes from the ability to create and edit the event and then buil
 - resgiter.html > This is the standard register page, but the layout/design has been changed, and FIRST and LAST NAME was added to the registration form.
 
 
-> Libraries <
+> Libraries
 
-VIEWS
+These are the libraries imported into Views.py and Modules.py in order for the app to function properly.
+
+*VIEWS
 - from django.contrib.auth import authenticate, login, logout
 - from django.db import IntegrityError
 - from django.http import HttpResponse, HttpResponseRedirect
@@ -70,5 +72,5 @@ VIEWS
 - from django.contrib.auth.decorators import login_required
 - from django.db.models import Count
 
-> MODULES <
+*MODULES
 - from rest_framework import serializers
