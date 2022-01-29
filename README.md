@@ -14,14 +14,14 @@ The complexity comes from the ability to create and edit the event and then buil
 
 - The name of the DJANGO Project is Capstone and within it, I created an app called Milestone - I did not know what app I wanted to build initially, but concluding this course certainly is a 'milestone'. The following are the files I have contributed code for and their contents:
 
->milestone/views.py<
+>milestone/views.py
 - The code here was entirely written by me. This contains all the necessary functions to render the pages and retrieve the desired information for the 'ALL EVENTS' page and 'USER'S EVENT PAGES'. This also contains the functions that support the randomization of options within each event as well as the logic that summarizes the likes for each restaurant/food option that the user sees after clicking to see the 'matches' of an event.
 - The functions that created and modify an event can also be seen here.
 
->milestone/urls.py<
+>milestone/urls.py
 - This contains all the URLs the app pings in order to retrieve data, create or update an object.
 
->milestone/models.py<
+>milestone/models.py
 - I have created four tables to support the logic I had in mind for this project and those can be found here.
 
 - 'Food' table/model: This is used to store all the information about the restaurants and food options - In the real world, this data could be supplied by an API, for instance.
@@ -34,10 +34,10 @@ The complexity comes from the ability to create and edit the event and then buil
 
 - 'LikeSerializer' Class: This class was created just so the response obtained by the 'views.py > match function could be serialized properly with the 'total_likes' grouped Restaurants that received likes within an event.
 
->milestone/static/milestone/index.js<
+>milestone/static/milestone/index.js
 - This contains all the event listers and functions used to access the functions in views.py. There is a listener function that displays a DIV for when an event needs to be created or modified. A function to delete an event and display an event to ensure the user really wants to delete the event, then once the deletion is confirmed the script will refresh the page.
 
->milestone/static/milestone/style.css<
+>milestone/static/milestone/style.css
 - This contains all the CSS used to adjust and modify the structure of the pages.
 
 >milestone/templates/milestone/...
@@ -59,7 +59,7 @@ The complexity comes from the ability to create and edit the event and then buil
 
 These are the libraries imported into Views.py and Modules.py in order for the app to function properly.
 
-//VIEWS
+* VIEWS *
 - from django.contrib.auth import authenticate, login, logout
 - from django.db import IntegrityError
 - from django.http import HttpResponse, HttpResponseRedirect
@@ -72,5 +72,5 @@ These are the libraries imported into Views.py and Modules.py in order for the a
 - from django.contrib.auth.decorators import login_required
 - from django.db.models import Count
 
-//MODULES
+* MODULES *
 - from rest_framework import serializers
