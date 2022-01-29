@@ -58,7 +58,7 @@ The name of the DJANGO Project is Capstone and within it, I created an app calle
 
 These are the libraries imported into Views.py and Modules.py in order for the app to function properly.
 
-* VIEWS *
+* VIEWS
   - from django.contrib.auth import authenticate, login, logout
   - from django.db import IntegrityError
   - from django.http import HttpResponse, HttpResponseRedirect
@@ -71,5 +71,5 @@ These are the libraries imported into Views.py and Modules.py in order for the a
   - from django.contrib.auth.decorators import login_required
   - from django.db.models import Count
 
-* MODULES *
+* MODULES
   - from rest_framework import serializers
