@@ -76,7 +76,7 @@ These are the libraries imported into Views.py and Modules.py in order for the a
 
 >Installation
   1. Clone respository's branch:
-    2. git clone --branch web50/projects/2020/x/capstone https://github.com/me50/thiagosrpt.git
+  2. >git clone --branch web50/projects/2020/x/capstone https://github.com/me50/thiagosrpt.git
   3. cd into project folder (capstone)
   4. Install project requirements:
-    5. pip install -r requirements.txt
+  5. >pip install -r requirements.txt
