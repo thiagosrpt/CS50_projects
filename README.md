@@ -54,7 +54,7 @@ The name of the DJANGO Project is Capstone and within it, I created an app calle
 
   - resgiter.html > This is the standard register page, but the layout/design has been changed, and FIRST and LAST NAME was added to the registration form.
 
-> Libraries
+> Python Packages
 
 These are the libraries imported into Views.py and Modules.py in order for the app to function properly.
 
@@ -73,3 +73,10 @@ These are the libraries imported into Views.py and Modules.py in order for the a
 
 * MODULES
   - from rest_framework import serializers
+
+>Installation
+  1. Clone respository's branch:
+    - git clone --branch web50/projects/2020/x/capstone https://github.com/me50/thiagosrpt.git
+  2. cd into project folder (capstone)
+  3. Install project requirements:
+    -  pip install -r requirements.txt
