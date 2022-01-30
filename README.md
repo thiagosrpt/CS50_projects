@@ -58,12 +58,14 @@ The name of the DJANGO Project is Capstone and within it, I created an app calle
 
 Django == 4.0.1
 
+django-rest-framework == 0.1.0
+
 djangorestframework == 3.13.1
 
 
 >Installation
   1. Clone respository's branch:
-  2. >git clone --branch web50/projects/2020/x/capstone https://github.com/me50/thiagosrpt.git
+  - >git clone --branch web50/projects/2020/x/capstone https://github.com/me50/thiagosrpt.git
   3. cd into project folder (capstone)
   4. Install project requirements:
-  5. >pip install -r requirements.txt
+  - >pip install -r requirements.txt
