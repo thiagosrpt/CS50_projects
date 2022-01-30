@@ -1,6 +1,6 @@
 # thiagosrpt
 
-> Distinctiveness and Complexity
+# Distinctiveness and Complexity
 
 I believe my project satisfies the distinctiveness and complexity requirements proposed because the idea is somewhat different from previous projects of this course. It does use some similar concepts, like using emails to invite users to participate like in the email app, but the concept of randomly presenting restaurants/options of food and creating matches based on the "likes" from participants of an event makes it unique and distinct from other projects.
 
@@ -8,13 +8,13 @@ The complexity comes from the ability to create and edit the event and then buil
 
 ----------
 
-> Purpose / App Use Case
+# Purpose / App Use Case
 
 "So, what are we eating?" is an app to help people pick a place for them to eat in which every participant can chime in. One user creates an event and invites other users to participate. From there, the app will randomly present users with place options that fit the criteria entered for the event - like a Tinder for restaurants. Maybe they want to get food delivered or picked up, or perhaps find a place where they can all sit down and have a good time. Based on the user votes, the app will show the matches organized by what's closer and with higher ratings (an event will present the full list of all options that have at least one match, but the closest options, with more matches and better rated, will always be at the top of the list - so a second and third option can also be seen on the list as a backup plan).
 
 ----------
 
-> File Description and Contributions
+# File Description and Contributions
 
 The name of the DJANGO Project is Capstone and within it, I created an app called Milestone - I did not know what app I wanted to build initially, but concluding this course certainly is a 'milestone'. The following are the files I have contributed code for and their contents:
 
@@ -60,7 +60,7 @@ The name of the DJANGO Project is Capstone and within it, I created an app calle
 
 ----------
 
-> Python Packages
+# Python Packages
 
 Django == 4.0.1
 
@@ -70,7 +70,7 @@ djangorestframework == 3.13.1
 
 ----------
 
->Installation
+# Installation
   1. Clone respository's branch:
   - >git clone --branch web50/projects/2020/x/capstone https://github.com/me50/thiagosrpt.git
   3. cd into project folder (capstone)
