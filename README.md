@@ -1,3 +1,12 @@
+Verified Certificate
+Issued February 11, 2022
+https://courses.edx.org/certificates/c8cb2bdab63e44a6be8db62b3b09f326
+ 
+Valid Certificate ID
+c8cb2bdab63e44a6be8db62b3b09f326
+
+----------
+
 # thiagosrpt
 
 # Distinctiveness and Complexity
