@@ -19,7 +19,7 @@ The complexity comes from the ability to create and edit the event and then buil
 
 # Purpose / App Use Case
 
-"So, what are we eating?" is an app to help people pick a place for them to eat in which every participant can chime in. One user creates an event and invites other users to participate. From there, the app will randomly present users with place options that fit the criteria entered for the event - like a Tinder for restaurants. Maybe they want to get food delivered or picked up, or perhaps find a place where they can all sit down and have a good time. Based on the user votes, the app will show the matches organized by what's closer and with higher ratings (an event will present the full list of all options that have at least one match, but the closest options, with more matches and better rated, will always be at the top of the list - so a second and third option can also be seen on the list as a backup plan).
+"So, what are we eating?" is an app that helps people decide where to eat with their friends or colleagues. One person creates an event and invites others to join. Then, the app shows everyone a list of restaurant options that meet the criteria for the event, such as delivery or dine-in. It's like a dating app for restaurants. Users can vote on their preferred options, and the app will show the top matches based on proximity and ratings. If the top choice doesn't work out, users can also see backup options on the list.
 
 ----------
 
